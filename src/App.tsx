@@ -8,31 +8,33 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Heart, ChevronRight, ChevronLeft, Sparkles, Music, Volume2, VolumeX } from 'lucide-react';
 import { Memory, AppState } from './types';
 
+const INTRO_IMAGE = "IMAGE_1";
+
 const MEMORIES: Memory[] = [
-  { id: 1, title: "", description: "我終於的起心肝買戒指啦", imageUrl: "https://picsum.photos/seed/m1/800/1000" },
-  { id: 2, title: "", description: "一直以黎可能你覺得我唔爹唔吊", imageUrl: "https://picsum.photos/seed/m2/800/1000" },
-  { id: 3, title: "", description: "我自細得媽教 佢教唔到我咩係家庭", imageUrl: "https://picsum.photos/seed/m3/800/1000" },
-  { id: 4, title: "", description: "佢令我覺得結完咪又係離婚", imageUrl: "https://picsum.photos/seed/m4/800/1000" },
-  { id: 5, title: "", description: "佢識埋個衰男人 令佢痛苦左一世 最辛苦既野都要一個人承擔", imageUrl: "https://picsum.photos/seed/m5/800/1000" },
-  { id: 6, title: "", description: "我覺得自己同媽都好慘 一直遭遇不幸", imageUrl: "https://picsum.photos/seed/m6/800/1000" },
-  { id: 7, title: "", description: "我一開始打算搵個藉口等你唔要我", imageUrl: "https://picsum.photos/seed/m7/800/1000" },
-  { id: 8, title: "", description: "因為我覺得不幸唔應該牽連到你", imageUrl: "https://picsum.photos/seed/m8/800/1000" },
-  { id: 9, title: "", description: "我覺得自己唔係好男人 甚至唔係一個完整的人", imageUrl: "https://picsum.photos/seed/m9/800/1000" },
-  { id: 10, title: "", description: "你成日話快d養", imageUrl: "https://picsum.photos/seed/m10/800/1000" },
-  { id: 11, title: "", description: "但我好驚自己俾唔到幸福你", imageUrl: "https://picsum.photos/seed/m11/800/1000" },
-  { id: 12, title: "", description: "因為我唔好既習慣導致浪費左好多年, 仲成日令b好傷心", imageUrl: "https://picsum.photos/seed/m12/800/1000" },
-  { id: 13, title: "", description: "因為我既家庭由頭到尾都冇一家之主", imageUrl: "https://picsum.photos/seed/m13/800/1000" },
-  { id: 14, title: "", description: "因為我背景唔知你爸媽會點諗", imageUrl: "https://picsum.photos/seed/m14/800/1000" },
-  { id: 15, title: "", description: "但係", imageUrl: "https://picsum.photos/seed/m15/800/1000" },
-  { id: 16, title: "", description: "無論如何我都好多謝b 9年一直陪住我", imageUrl: "https://picsum.photos/seed/m16/800/1000" },
-  { id: 17, title: "", description: "度過一次又一次的難關", imageUrl: "https://picsum.photos/seed/m17/800/1000" },
-  { id: 18, title: "", description: "每一關我都好難過 但你都肯陪住我", imageUrl: "https://picsum.photos/seed/m18/800/1000" },
-  { id: 19, title: "", description: "我一直都唔明我係唔係咁值得信任", imageUrl: "https://picsum.photos/seed/m19/800/1000" },
-  { id: 20, title: "", description: "但係我覺得自己好彩生得高同靚仔", imageUrl: "https://picsum.photos/seed/m20/800/1000" },
-  { id: 21, title: "", description: "仲有守時同做野有交帶仲肯幫你做清潔", imageUrl: "https://picsum.photos/seed/m21/800/1000" },
-  { id: 22, title: "", description: "我都希望b多d聽我講野 因為我成日有道理你都唔肯聽", imageUrl: "https://picsum.photos/seed/m22/800/1000" },
-  { id: 23, title: "", description: "今次我都想你聽我講", imageUrl: "https://picsum.photos/seed/m23/800/1000" },
-  { id: 24, title: "", description: "如果你願意 我會承擔對b下半生的責任", imageUrl: "https://picsum.photos/seed/m24/800/1000" }
+  { id: 1, title: "", description: "我終於的起心肝買戒指啦", imageUrl: "IMAGE_2" },
+  { id: 2, title: "", description: "一直以黎可能你覺得我唔爹唔吊", imageUrl: "IMAGE_3" },
+  { id: 3, title: "", description: "我自細得媽教 佢教唔到我咩係家庭", imageUrl: "IMAGE_4" },
+  { id: 4, title: "", description: "佢令我覺得結完咪又係離婚", imageUrl: "IMAGE_5" },
+  { id: 5, title: "", description: "佢識埋個衰男人 令佢痛苦左一世 最辛苦既野都要一個人承擔", imageUrl: "IMAGE_6" },
+  { id: 6, title: "", description: "我覺得自己同媽都好慘 一直遭遇不幸", imageUrl: "IMAGE_7" },
+  { id: 7, title: "", description: "我一開始打算搵個藉口等你唔要我", imageUrl: "IMAGE_8" },
+  { id: 8, title: "", description: "因為我覺得不幸唔應該牽連到你", imageUrl: "IMAGE_9" },
+  { id: 9, title: "", description: "我覺得自己唔係好男人 甚至唔係一個完整的人", imageUrl: "IMAGE_10" },
+  { id: 10, title: "", description: "你成日話快d養", imageUrl: "IMAGE_11" },
+  { id: 11, title: "", description: "但我好驚自己俾唔到幸福你", imageUrl: "IMAGE_12" },
+  { id: 12, title: "", description: "因為我唔好既習慣導致浪費左好多年, 仲成日令b好傷心", imageUrl: "IMAGE_13" },
+  { id: 13, title: "", description: "因為我既家庭由頭到尾都冇一家之主", imageUrl: "IMAGE_14" },
+  { id: 14, title: "", description: "因為我背景唔知你爸媽會點諗", imageUrl: "IMAGE_15" },
+  { id: 15, title: "", description: "但係", imageUrl: "" },
+  { id: 16, title: "", description: "無論如何我都好多謝b 9年一直陪住我", imageUrl: "" },
+  { id: 17, title: "", description: "度過一次又一次的難關", imageUrl: "" },
+  { id: 18, title: "", description: "每一關我都好難過 但你都肯陪住我", imageUrl: "" },
+  { id: 19, title: "", description: "我一直都唔明我係唔係咁值得信任", imageUrl: "" },
+  { id: 20, title: "", description: "但係我覺得自己好彩生得高同靚仔", imageUrl: "" },
+  { id: 21, title: "", description: "仲有守時同做野有交帶仲肯幫你做清潔", imageUrl: "" },
+  { id: 22, title: "", description: "我都希望b多d聽我講野 因為我成日有道理你都唔肯聽", imageUrl: "" },
+  { id: 23, title: "", description: "今次我都想你聽我講", imageUrl: "" },
+  { id: 24, title: "", description: "如果你願意 我會承擔對b下半生的責任", imageUrl: "IMAGE_16" }
 ];
 
 export default function App() {
@@ -157,32 +159,34 @@ export default function App() {
             exit={{ opacity: 0, y: -20 }}
             className="relative z-10 flex flex-col items-center justify-center min-h-screen p-6 text-center"
           >
+            {INTRO_IMAGE && (
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="mb-8 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl"
+              >
+                <img src={INTRO_IMAGE} alt="Intro" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              </motion.div>
+            )}
+            
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="mb-8"
+              className="mb-4"
             >
-              <Heart className="w-16 h-16 text-rose-500 animate-heartbeat fill-rose-500" />
+              <Heart className="w-12 h-12 text-rose-500 animate-heartbeat fill-rose-500" />
             </motion.div>
             
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-5xl md:text-7xl font-serif mb-6 text-stone-800"
+              className="text-5xl md:text-7xl font-serif mb-12 text-stone-800"
             >
               Bshiへ
             </motion.h1>
-            
-            <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="text-lg md:text-xl text-stone-500 max-w-md mb-12 italic font-serif"
-            >
-              「在遇見你之前，我從不相信永恆。但現在，我想和你一起書寫我們的未來。」
-            </motion.p>
             
             <motion.button
               initial={{ y: 20, opacity: 0 }}
@@ -206,72 +210,77 @@ export default function App() {
             exit={{ opacity: 0 }}
             className="relative z-10 min-h-screen flex flex-col"
           >
-            <div className="flex-1 flex flex-col md:flex-row">
-              {/* Image Section */}
-              <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={MEMORIES[currentMemoryIndex].imageUrl}
-                    src={MEMORIES[currentMemoryIndex].imageUrl}
-                    alt={MEMORIES[currentMemoryIndex].title}
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 1.05, opacity: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </AnimatePresence>
-                <div className="absolute inset-0 bg-black/10" />
-              </div>
+            {MEMORIES[currentMemoryIndex].imageUrl ? (
+              <div className="flex-1 flex flex-col md:flex-row">
+                {/* Image Section */}
+                <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={MEMORIES[currentMemoryIndex].imageUrl}
+                      src={MEMORIES[currentMemoryIndex].imageUrl}
+                      alt={MEMORIES[currentMemoryIndex].title}
+                      initial={{ scale: 1.1, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 1.05, opacity: 0 }}
+                      transition={{ duration: 0.8 }}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </AnimatePresence>
+                  <div className="absolute inset-0 bg-black/10" />
+                </div>
 
-              {/* Content Section */}
-              <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-white/50 backdrop-blur-sm">
+                {/* Content Section */}
+                <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-white/50 backdrop-blur-sm">
+                  <motion.div
+                    key={currentMemoryIndex}
+                    initial={{ x: 20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <h2 className="text-4xl md:text-6xl font-serif mb-8 text-stone-800 leading-tight">
+                      {MEMORIES[currentMemoryIndex].title}
+                    </h2>
+                    <p className="text-lg md:text-2xl text-stone-600 leading-relaxed mb-12 font-serif">
+                      {MEMORIES[currentMemoryIndex].description}
+                    </p>
+                  </motion.div>
+
+                  <div className="flex items-center justify-end mt-auto pt-8 border-t border-stone-200">
+                    <button
+                      onClick={nextMemory}
+                      className="flex items-center gap-2 text-stone-800 font-medium hover:text-rose-600 transition-colors"
+                    >
+                      {currentMemoryIndex === MEMORIES.length - 1 ? '最後一頁' : '下一頁'} <ChevronRight className="w-6 h-6" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* Text Only Layout */
+              <div className="flex-1 flex flex-col items-center justify-center p-8 md:p-24 bg-white/30 backdrop-blur-sm">
                 <motion.div
                   key={currentMemoryIndex}
-                  initial={{ x: 20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
+                  className="max-w-4xl text-center"
                 >
-                  <span className="text-rose-500 font-serif italic text-xl mb-4 block">
-                    {MEMORIES[currentMemoryIndex].date}
-                  </span>
-                  <h2 className="text-4xl md:text-6xl font-serif mb-8 text-stone-800 leading-tight">
-                    {MEMORIES[currentMemoryIndex].title}
-                  </h2>
-                  <p className="text-lg md:text-xl text-stone-600 leading-relaxed mb-12 font-serif">
+                  <p className="text-2xl md:text-4xl text-stone-700 leading-relaxed mb-16 font-serif italic">
                     {MEMORIES[currentMemoryIndex].description}
                   </p>
                 </motion.div>
 
-                <div className="flex items-center justify-between mt-auto pt-8 border-t border-stone-200">
-                  <button
-                    onClick={prevMemory}
-                    className="flex items-center gap-2 text-stone-400 hover:text-stone-800 transition-colors"
-                  >
-                    <ChevronLeft className="w-6 h-6" /> 上一頁
-                  </button>
-                  
-                  <div className="flex gap-2">
-                    {MEMORIES.map((_, i) => (
-                      <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          i === currentMemoryIndex ? 'w-8 bg-rose-400' : 'bg-stone-200'
-                        }`}
-                      />
-                    ))}
-                  </div>
-
+                <div className="w-full max-w-4xl flex items-center justify-end pt-8 border-t border-stone-200/50">
                   <button
                     onClick={nextMemory}
-                    className="flex items-center gap-2 text-stone-800 font-medium hover:text-rose-600 transition-colors"
+                    className="flex items-center gap-2 text-stone-800 font-medium hover:text-rose-600 transition-colors text-xl"
                   >
-                    {currentMemoryIndex === MEMORIES.length - 1 ? '最後一頁' : '下一頁'} <ChevronRight className="w-6 h-6" />
+                    {currentMemoryIndex === MEMORIES.length - 1 ? '最後一頁' : '下一頁'} <ChevronRight className="w-8 h-8" />
                   </button>
                 </div>
               </div>
-            </div>
+            )}
           </motion.div>
         )}
 
