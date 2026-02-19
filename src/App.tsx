@@ -9,34 +9,30 @@ import { Heart, ChevronRight, ChevronLeft, Sparkles, Music, Volume2, VolumeX } f
 import { Memory, AppState } from './types';
 
 const MEMORIES: Memory[] = [
-  {
-    id: 1,
-    title: "我們的初次見面",
-    description: "那天陽光正好，在那個轉角遇見你，是我這輩子最幸運的事。你的笑容從那一刻起就刻在了我的心裡。",
-    imageUrl: "https://picsum.photos/seed/first-meet/800/1000",
-    date: "2022.05.20"
-  },
-  {
-    id: 2,
-    title: "第一次旅行",
-    description: "我們一起看過的海，一起走過的路。那些在異地互相依靠的瞬間，讓我確定你就是我想共度餘生的人。",
-    imageUrl: "https://picsum.photos/seed/travel/800/1000",
-    date: "2023.01.15"
-  },
-  {
-    id: 3,
-    title: "平凡的幸福",
-    description: "不只是浪漫的節日，更多的是那些一起下廚、一起看電影、一起發呆的午後。有你在身邊，平凡的日子也閃閃發光。",
-    imageUrl: "https://picsum.photos/seed/daily/800/1000",
-    date: "2024.08.12"
-  },
-  {
-    id: 4,
-    title: "未來的約定",
-    description: "我們討論過夢想中的家，討論過未來的孩子，討論過要一起變老。現在，我想把這些討論變成現實。",
-    imageUrl: "https://picsum.photos/seed/future/800/1000",
-    date: "2025.12.25"
-  }
+  { id: 1, title: "", description: "我終於的起心肝買戒指啦", imageUrl: "https://picsum.photos/seed/m1/800/1000" },
+  { id: 2, title: "", description: "一直以黎可能你覺得我唔爹唔吊", imageUrl: "https://picsum.photos/seed/m2/800/1000" },
+  { id: 3, title: "", description: "我自細得媽教 佢教唔到我咩係家庭", imageUrl: "https://picsum.photos/seed/m3/800/1000" },
+  { id: 4, title: "", description: "佢令我覺得結完咪又係離婚", imageUrl: "https://picsum.photos/seed/m4/800/1000" },
+  { id: 5, title: "", description: "佢識埋個衰男人 令佢痛苦左一世 最辛苦既野都要一個人承擔", imageUrl: "https://picsum.photos/seed/m5/800/1000" },
+  { id: 6, title: "", description: "我覺得自己同媽都好慘 一直遭遇不幸", imageUrl: "https://picsum.photos/seed/m6/800/1000" },
+  { id: 7, title: "", description: "我一開始打算搵個藉口等你唔要我", imageUrl: "https://picsum.photos/seed/m7/800/1000" },
+  { id: 8, title: "", description: "因為我覺得不幸唔應該牽連到你", imageUrl: "https://picsum.photos/seed/m8/800/1000" },
+  { id: 9, title: "", description: "我覺得自己唔係好男人 甚至唔係一個完整的人", imageUrl: "https://picsum.photos/seed/m9/800/1000" },
+  { id: 10, title: "", description: "你成日話快d養", imageUrl: "https://picsum.photos/seed/m10/800/1000" },
+  { id: 11, title: "", description: "但我好驚自己俾唔到幸福你", imageUrl: "https://picsum.photos/seed/m11/800/1000" },
+  { id: 12, title: "", description: "因為我唔好既習慣導致浪費左好多年, 仲成日令b好傷心", imageUrl: "https://picsum.photos/seed/m12/800/1000" },
+  { id: 13, title: "", description: "因為我既家庭由頭到尾都冇一家之主", imageUrl: "https://picsum.photos/seed/m13/800/1000" },
+  { id: 14, title: "", description: "因為我背景唔知你爸媽會點諗", imageUrl: "https://picsum.photos/seed/m14/800/1000" },
+  { id: 15, title: "", description: "但係", imageUrl: "https://picsum.photos/seed/m15/800/1000" },
+  { id: 16, title: "", description: "無論如何我都好多謝b 9年一直陪住我", imageUrl: "https://picsum.photos/seed/m16/800/1000" },
+  { id: 17, title: "", description: "度過一次又一次的難關", imageUrl: "https://picsum.photos/seed/m17/800/1000" },
+  { id: 18, title: "", description: "每一關我都好難過 但你都肯陪住我", imageUrl: "https://picsum.photos/seed/m18/800/1000" },
+  { id: 19, title: "", description: "我一直都唔明我係唔係咁值得信任", imageUrl: "https://picsum.photos/seed/m19/800/1000" },
+  { id: 20, title: "", description: "但係我覺得自己好彩生得高同靚仔", imageUrl: "https://picsum.photos/seed/m20/800/1000" },
+  { id: 21, title: "", description: "仲有守時同做野有交帶仲肯幫你做清潔", imageUrl: "https://picsum.photos/seed/m21/800/1000" },
+  { id: 22, title: "", description: "我都希望b多d聽我講野 因為我成日有道理你都唔肯聽", imageUrl: "https://picsum.photos/seed/m22/800/1000" },
+  { id: 23, title: "", description: "今次我都想你聽我講", imageUrl: "https://picsum.photos/seed/m23/800/1000" },
+  { id: 24, title: "", description: "如果你願意 我會承擔對b下半生的責任", imageUrl: "https://picsum.photos/seed/m24/800/1000" }
 ];
 
 export default function App() {
@@ -176,7 +172,7 @@ export default function App() {
               transition={{ delay: 0.5 }}
               className="text-5xl md:text-7xl font-serif mb-6 text-stone-800"
             >
-              我們的故事
+              Bshiへ
             </motion.h1>
             
             <motion.p
@@ -197,7 +193,7 @@ export default function App() {
               onClick={startApp}
               className="bg-stone-800 text-white px-10 py-4 rounded-full text-lg tracking-widest uppercase flex items-center gap-3 shadow-xl hover:bg-stone-700 transition-colors"
             >
-              開始回顧 <ChevronRight className="w-5 h-5" />
+              我有野想同你講 <ChevronRight className="w-5 h-5" />
             </motion.button>
           </motion.div>
         )}
@@ -305,7 +301,7 @@ export default function App() {
               transition={{ delay: 0.4 }}
               className="text-5xl md:text-8xl font-serif mb-12 text-stone-800 leading-tight"
             >
-              你願意嫁給我嗎？
+              你願意嗎?
             </motion.h2>
 
             <motion.div
