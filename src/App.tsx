@@ -8,33 +8,33 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Heart, ChevronRight, ChevronLeft, Sparkles, Music, Volume2, VolumeX } from 'lucide-react';
 import { Memory, AppState } from './types';
 
-const INTRO_IMAGE = "IMAGE_1";
+const INTRO_IMAGE = "https://i.ibb.co/bj32XQv8/1.jpg";
 
 const MEMORIES: Memory[] = [
-  { id: 1, title: "", description: "我終於的起心肝買戒指啦", imageUrl: "IMAGE_2" },
-  { id: 2, title: "", description: "一直以黎可能你覺得我唔爹唔吊", imageUrl: "IMAGE_3" },
-  { id: 3, title: "", description: "我自細得媽教 佢教唔到我咩係家庭", imageUrl: "IMAGE_4" },
-  { id: 4, title: "", description: "佢令我覺得結完咪又係離婚", imageUrl: "IMAGE_5" },
-  { id: 5, title: "", description: "佢識埋個衰男人 令佢痛苦左一世 最辛苦既野都要一個人承擔", imageUrl: "IMAGE_6" },
-  { id: 6, title: "", description: "我覺得自己同媽都好慘 一直遭遇不幸", imageUrl: "IMAGE_7" },
-  { id: 7, title: "", description: "我一開始打算搵個藉口等你唔要我", imageUrl: "IMAGE_8" },
-  { id: 8, title: "", description: "因為我覺得不幸唔應該牽連到你", imageUrl: "IMAGE_9" },
-  { id: 9, title: "", description: "我覺得自己唔係好男人 甚至唔係一個完整的人", imageUrl: "IMAGE_10" },
-  { id: 10, title: "", description: "你成日話快d養", imageUrl: "IMAGE_11" },
-  { id: 11, title: "", description: "但我好驚自己俾唔到幸福你", imageUrl: "IMAGE_12" },
-  { id: 12, title: "", description: "因為我唔好既習慣導致浪費左好多年, 仲成日令b好傷心", imageUrl: "IMAGE_13" },
-  { id: 13, title: "", description: "因為我既家庭由頭到尾都冇一家之主", imageUrl: "IMAGE_14" },
-  { id: 14, title: "", description: "因為我背景唔知你爸媽會點諗", imageUrl: "IMAGE_15" },
+  { id: 1, title: "", description: "我終於的起心肝買戒指啦", imageUrl: "" },
+  { id: 2, title: "", description: "一直以黎可能你覺得我唔爹唔吊", imageUrl: "https://i.ibb.co/zV1GDDv2/3.jpg" },
+  { id: 3, title: "", description: "我自細得媽教 佢教唔到我咩係家庭", imageUrl: "https://i.ibb.co/7drKJ5DP/4.jpg" },
+  { id: 4, title: "", description: "佢令我覺得結完咪又係離婚", imageUrl: "https://i.ibb.co/7drKJ5DP/4.jpg" },
+  { id: 5, title: "", description: "佢識埋個衰男人 令佢痛苦左一世 最辛苦既野都要一個人承擔", imageUrl: "https://i.ibb.co/7drKJ5DP/4.jpg" },
+  { id: 6, title: "", description: "我覺得自己同媽都好慘 一直遭遇不幸", imageUrl: "https://i.ibb.co/7drKJ5DP/4.jpg" },
+  { id: 7, title: "", description: "我一開始打算搵個藉口等你唔要我", imageUrl: "https://i.ibb.co/HfHFJjfh/8.jpg" },
+  { id: 8, title: "", description: "因為我覺得不幸唔應該牽連到你", imageUrl: "https://i.ibb.co/VK3M5S6/9.jpg" },
+  { id: 9, title: "", description: "我覺得自己唔係好男人 甚至唔係一個完整的人", imageUrl: "https://i.ibb.co/KcsfcgH5/10.jpg" },
+  { id: 10, title: "", description: "你成日話快d養", imageUrl: "https://i.ibb.co/Fk51dTp2/11.jpg" },
+  { id: 11, title: "", description: "但我好驚自己俾唔到幸福你", imageUrl: "" },
+  { id: 12, title: "", description: "因為我唔好既習慣導致浪費左好多年, 仲成日令b好傷心", imageUrl: "" },
+  { id: 13, title: "", description: "因為我既家庭由頭到尾都冇一家之主", imageUrl: "" },
+  { id: 14, title: "", description: "因為我背景唔知你爸媽會點諗", imageUrl: "" },
   { id: 15, title: "", description: "但係", imageUrl: "" },
   { id: 16, title: "", description: "無論如何我都好多謝b 9年一直陪住我", imageUrl: "" },
   { id: 17, title: "", description: "度過一次又一次的難關", imageUrl: "" },
   { id: 18, title: "", description: "每一關我都好難過 但你都肯陪住我", imageUrl: "" },
   { id: 19, title: "", description: "我一直都唔明我係唔係咁值得信任", imageUrl: "" },
-  { id: 20, title: "", description: "但係我覺得自己好彩生得高同靚仔", imageUrl: "" },
-  { id: 21, title: "", description: "仲有守時同做野有交帶仲肯幫你做清潔", imageUrl: "" },
-  { id: 22, title: "", description: "我都希望b多d聽我講野 因為我成日有道理你都唔肯聽", imageUrl: "" },
-  { id: 23, title: "", description: "今次我都想你聽我講", imageUrl: "" },
-  { id: 24, title: "", description: "如果你願意 我會承擔對b下半生的責任", imageUrl: "IMAGE_16" }
+  { id: 20, title: "", description: "但係我覺得自己好彩生得高同靚仔", imageUrl: "https://i.ibb.co/5hLN9gFn/21.jpg" },
+  { id: 21, title: "", description: "仲有守時同做野有交帶仲肯幫你做清潔", imageUrl: "https://i.ibb.co/wZ1j65hj/22.jpg" },
+  { id: 22, title: "", description: "我都希望b多d聽我講野 因為我成日有道理你都唔肯聽", imageUrl: "https://i.ibb.co/Wp4Lhmf3/23.jpg" },
+  { id: 23, title: "", description: "今次我都想你聽我講", imageUrl: "https://i.ibb.co/YFTrJsgS/24.jpg" },
+  { id: 24, title: "", description: "如果你願意 我會承擔對b下半生的責任", imageUrl: "https://i.ibb.co/d0VsGF20/25.jpg" }
 ];
 
 export default function App() {
